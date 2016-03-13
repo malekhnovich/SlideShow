@@ -33,7 +33,7 @@ function animate() {
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
 function swapPhoto() {
-	document.getElementById("slideShow").src=galleryImage.images[0]["imgPath"];
+	document.getElementById("slideShow").src=mImages.images[0]["imgPath"];
 	//Add code here to access the #slideShow element.
 	//Access the img element and replace its source
 	//with a new image from your images array which is loaded 
