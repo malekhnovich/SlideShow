@@ -33,6 +33,7 @@ function animate() {
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
 function swapPhoto() {
+	document.getElementById("slideShow").src=galleryImage.images[0]["imgPath"];
 	//Add code here to access the #slideShow element.
 	//Access the img element and replace its source
 	//with a new image from your images array which is loaded 
@@ -42,19 +43,37 @@ function swapPhoto() {
 
 // Counter for the mImages array
 var mCurrentIndex = 0;
-
+// URL for the JSON to load by default
+// Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
+var mUrl = 'images.json';
 // XMLHttpRequest variable
 var mRequest = new XMLHttpRequest();
+function mRequestListener(){
+	var mJson=this.responseText;
+	galleryImage=JSON.parse(mJson);
+	for(mCurrentIndex=0;mCurrentIndex<galleryImage.images.length;mCurrentIndex++){
+		mImages.push(galleryImage.images[mCurrentIndex]);
+		if(mCurrentIndex==galleryImage.images.length-1){
+			mCurrentIndex==0;
+		}
+		//console.log(mImages[mCurrentIndex]);
+	}
+	console.log(galleryImage.images[0]["imgPath"]);
 
+}
+mRequest.addEventListener("load",mRequestListener);
+mRequest.open("GET",mUrl);
+mRequest.send();
+
+//GalleryImage=JSON.parse(mUrl);
+//GalleryImage=JSON.parse(mRequest.responseText);
 // Array holding GalleryImage objects (see below).
 var mImages = [];
 
 // Holds the retrived JSON information
 var mJson;
 
-// URL for the JSON to load by default
-// Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
-var mUrl = 'insert_url_here_to_image_json';
+
 
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
@@ -78,11 +97,15 @@ window.addEventListener('load', function() {
 	console.log('window loaded');
 
 }, false);
-
-function GalleryImage() {
+//PART 1
+var GalleryImage=function GalleryImage() {
+	this.location=location;
+	this.description=description;
+	this.date=date;
+	this.img=img;
 	//implement me as an object to hold the following data about an image:
 	//1. location where photo was taken
 	//2. description of photo
 	//3. the date when the photo was taken
 	//4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
-}
+};
