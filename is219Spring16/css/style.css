@@ -32,12 +32,15 @@ body {
 	opacity: .8;
 	top: 0px;
 
+
+
+}
+.moreIndicator.rot90{
 	-webkit-transform: rotate(90deg);
 	-moz-transform: rotate(90deg);
 	-o-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
-
 }
 
 .thumbnail {
@@ -59,11 +62,19 @@ body {
 #prevPhoto {
 	height: 42px;
 	width: 42px;
+
+}
+#prevPhoto:hover{
+	opacity:.8;
 }
 
 #nextPhoto {
 	height: 42px;
 	width: 42px;
+
+}
+#nextPhoto:hover{
+	opacity:.8;
 }
 
 .details p {
@@ -73,6 +84,7 @@ body {
 	border: 1px #000 dashed;
 	padding: 0px 10px;
 	margin: 20px 0px;
+
 }
 
 /*Add CSS styles to rotate the element 90deg
@@ -86,6 +98,8 @@ Make it animate nicely. You'll need CSS3 for this*/
 	height:20px;
 	opacity: .3;
 	text-decoration: none;
+	transform: rotate(90deg);
+
 
 	/*Firefox*/
 	-moz-transition:all 1s ease;
@@ -102,18 +116,18 @@ Make it animate nicely. You'll need CSS3 for this*/
 
 		/* Firefox */
 
-	-moz-transform: scale(2) rotate(30deg) translate(50px);
+	-moz-transform: scale(2) rotate(90deg) translate(50px);
 
 		/* WebKit */
 
-	-webkit-transform: scale(1.2) rotate(30deg) translate(50px);
+	-webkit-transform: scale(1.2) rotate(90deg) translate(50px);
 		/* Opera */
 
-	-o-transform: scale(2) rotate(30deg) translate(50px);
+	-o-transform: scale(2) rotate(90deg) translate(50px);
 
 		/* Standard */
 
-	transform: scale(2) rotate(30deg) translate(50px);
+	transform: scale(2) rotate(90deg) translate(50px);
 
 
 
@@ -125,14 +139,19 @@ Make it animate nicely. You'll need CSS3 for this*/
 /*Add CSS styles to rotate the element 180deg
 Make it animate nicely. You'll need CSS3 for this*/
 .rot180 {
-	position:relative;
-	display:inline-block;
-	border:1px dashed blue;
-	padding:10px;
-	background:orange;
-	height:20px;
-	opacity: .3;
+	position: relative;
+	display: inline-block;
+	border: 1px dashed blue;
+	padding: 10px;
+	background: black;
+	height: 20px;
+	opacity: .8;
 	text-decoration: none;
+
+
+
+
+
 
 	/*Firefox*/
 	-moz-transition:all 1s ease;
@@ -142,30 +161,32 @@ Make it animate nicely. You'll need CSS3 for this*/
 	-o-transition:all 1s ease;
 	/*Standard*/
 	transition: all 1s ease;
+
+
 }
+
 .rot180:hover{
 	opacity:1;
 
 
 	/* Firefox */
 
-	-moz-transform: scale(2) rotate(30deg) translate(50px);
+	-moz-transform: scale(2) rotate(180deg) translate(50px);
 
 	/* WebKit */
 
-	-webkit-transform: scale(1.2) rotate(30deg) translate(50px);
+	-webkit-transform: scale(1.2) rotate(180deg) translate(50px);
 	/* Opera */
 
-	-o-transform: scale(2) rotate(30deg) translate(50px);
+	-o-transform: scale(2) rotate(180deg) translate(50px);
 
 	/* Standard */
 
-	transform: scale(2) rotate(30deg) translate(50px);
+	transform: scale(2) rotate(180deg) translate(50px);
 
 
 
 	z-index: 1000;
-
 }
 
 /*Add CSS styles to rotate the element 270deg
@@ -189,6 +210,7 @@ Make it animate nicely. You'll need CSS3 for this*/
 	/*Standard*/
 	transition: all 1s ease;
 
+
 }
 .rot270:hover{
 	opacity:1;
@@ -196,18 +218,18 @@ Make it animate nicely. You'll need CSS3 for this*/
 
 	/* Firefox */
 
-	-moz-transform: scale(2) rotate(30deg) translate(50px);
+	-moz-transform: scale(2) rotate(270deg) translate(50px);
 
 	/* WebKit */
 
-	-webkit-transform: scale(1.2) rotate(30deg) translate(50px);
+	-webkit-transform: scale(1.2) rotate(270deg) translate(50px);
 	/* Opera */
 
-	-o-transform: scale(2) rotate(30deg) translate(50px);
+	-o-transform: scale(2) rotate(270deg) translate(50px);
 
 	/* Standard */
 
-	transform: scale(2) rotate(30deg) translate(50px);
+	transform: scale(2) rotate(270deg) translate(50px);
 
 
 

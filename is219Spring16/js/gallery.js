@@ -32,12 +32,42 @@ function animate() {
 
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
+//div details fadeToggle
+
+$(document).ready(function() {
+	$("#nextPhoto").css("float", "right");
+
+});
+
+
+
+//adding a click handler to the img.moreIndicator
+$("img.moreIndicator").click(function(){
+	if($(".moreIndicator").hasClass("rot90")) {
+		console.log("Came back true");
+		$(".moreIndicator").addClass("rot270");
+	}else{
+		$(".moreIndicator").removeClass("rot270");
+		console.log("Came back false");
+		$(".moreIndicator").addClass("rot90");
+	}
+	$(".moreIndicator.rot90").fadeToggle();
+});
+
+
+
+
+
+
+
+
+
 function swapPhoto() {
 	for(mCurrentIndex=0;mCurrentIndex<mImages.length;mCurrentIndex++){
 		document.getElementById("photo").src=mImages[mCurrentIndex]["imgPath"];
-		$( "div.details" ).html( "<p>Description: "+mImages[mCurrentIndex]["description"]+"</p>"+
+		$( "div.details" ).html( "<div class='details'<p>Description: "+mImages[mCurrentIndex]["description"]+"</p>"+
 		"<p>Location: "+mImages[mCurrentIndex]["imgLocation"]+"</p>"+
-		"<p>Date: "+mImages[mCurrentIndex]["date"]+"</p>");
+		"<p>Date: "+mImages[mCurrentIndex]["date"]+"</p></details>");
 
 		//document.getElementById("div.details").innerHTML=mImages[mCurrentIndex]["description"];
 
