@@ -34,7 +34,16 @@ function animate() {
 
 function swapPhoto() {
 	for(mCurrentIndex=0;mCurrentIndex<mImages.length;mCurrentIndex++){
-		document.getElementById("slideShow").src=mImages[mCurrentIndex]["imgPath"];
+		document.getElementById("photo").src=mImages[mCurrentIndex]["imgPath"];
+		$( "div.details" ).html( "<p>Description: "+mImages[mCurrentIndex]["description"]+"</p>"+
+		"<p>Location: "+mImages[mCurrentIndex]["imgLocation"]+"</p>"+
+		"<p>Date: "+mImages[mCurrentIndex]["date"]+"</p>");
+
+		//document.getElementById("div.details").innerHTML=mImages[mCurrentIndex]["description"];
+
+		if(mCurrentIndex==galleryImage.images.length-1){
+			mCurrentIndex==0;
+		}
 	}
 
 
@@ -57,9 +66,7 @@ function mRequestListener(){
 	galleryImage=JSON.parse(mJson);
 	for(mCurrentIndex=0;mCurrentIndex<galleryImage.images.length;mCurrentIndex++){
 		mImages.push(galleryImage.images[mCurrentIndex]);
-		if(mCurrentIndex==galleryImage.images.length-1){
-			mCurrentIndex==0;
-		}
+
 		//console.log(mImages[mCurrentIndex]);
 	}
 	console.log(galleryImage.images[0]["imgPath"]);
