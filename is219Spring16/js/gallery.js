@@ -71,6 +71,12 @@ function swapPhoto() {
 		$( "div.details" ).empty().append( "<p>Description: "+mImages[mCurrentIndex]["description"]+"</p>"+
 		"<p>Location: "+mImages[mCurrentIndex]["imgLocation"]+"</p>"+
 		"<p>Date: "+mImages[mCurrentIndex]["date"]+"</p></details>").show();
+		if(mCurrentIndex==galleryImage.images.length-1){
+			mCurrentIndex==0;
+		}
+		$("#prevPhoto").click(function () {
+			$document.getElementById("photo").src = mImages[mCurrentIndex]["imgPath"];
+		});
 		$("#nextPhoto").click(function () {
 
 			document.getElementById("photo").src = mImages[mCurrentIndex]["imgPath"];
@@ -78,15 +84,10 @@ function swapPhoto() {
 
 		});
 
-		$("#prevPhoto").click(function () {
-			$document.getElementById("photo").src = mImages[mCurrentIndex]["imgPath"];
-		});
 
 
 
-		if(mCurrentIndex==galleryImage.images.length-1){
-			mCurrentIndex==0;
-		}
+
 	}
 
 
