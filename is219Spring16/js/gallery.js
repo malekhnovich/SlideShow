@@ -38,6 +38,9 @@ $(document).ready(function() {
 	$("#nextPhoto").css("float", "right");
 
 });
+$(document).ready(function() {
+
+});
 
 
 
@@ -65,11 +68,21 @@ $("img.moreIndicator").click(function(){
 function swapPhoto() {
 	for(mCurrentIndex=0;mCurrentIndex<mImages.length;mCurrentIndex++){
 		document.getElementById("photo").src=mImages[mCurrentIndex]["imgPath"];
-		$( "div.details" ).html( "<div class='details'<p>Description: "+mImages[mCurrentIndex]["description"]+"</p>"+
+		$( "div.details" ).empty().append( "<p>Description: "+mImages[mCurrentIndex]["description"]+"</p>"+
 		"<p>Location: "+mImages[mCurrentIndex]["imgLocation"]+"</p>"+
-		"<p>Date: "+mImages[mCurrentIndex]["date"]+"</p></details>");
+		"<p>Date: "+mImages[mCurrentIndex]["date"]+"</p></details>").show();
+		$("#nextPhoto").click(function () {
 
-		//document.getElementById("div.details").innerHTML=mImages[mCurrentIndex]["description"];
+			document.getElementById("photo").src = mImages[mCurrentIndex]["imgPath"];
+			//console.log(mImages);
+
+		});
+
+		$("#prevPhoto").click(function () {
+			$document.getElementById("photo").src = mImages[mCurrentIndex]["imgPath"];
+		});
+
+
 
 		if(mCurrentIndex==galleryImage.images.length-1){
 			mCurrentIndex==0;
@@ -81,6 +94,7 @@ function swapPhoto() {
 	//Access the img element and replace its source
 	//with a new image from your images array which is loaded 
 	//from the JSON string
+	//console.log(mImages[mCurrentIndex]);
 	console.log('swap photo');
 }
 
