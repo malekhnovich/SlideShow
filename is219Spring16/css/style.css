@@ -28,19 +28,23 @@ body {
 	height: 50px;
 	width: 50px;
 	position: absolute;
+
 	z-index: 3;
 	opacity: .8;
 	top: 0px;
 
 
 
+
 }
 .moreIndicator.rot90{
+
 	-webkit-transform: rotate(90deg);
 	-moz-transform: rotate(90deg);
 	-o-transform: rotate(90deg);
 	-ms-transform: rotate(90deg);
 	transform: rotate(90deg);
+	text-align: center;
 }
 
 .thumbnail {
@@ -64,18 +68,62 @@ body {
 	height: 42px;
 	width: 42px;
 
+
 }
 #prevPhoto:hover{
 	opacity:.8;
 }
 
 #nextPhoto {
-	height: 42px;
-	width: 42px;
+	position: relative;
+	display: inline-block;
+	border: 1px dashed blue;
+	padding: 10px;
+	background: black;
+	height: 20px;
+	opacity: .8;
+	text-decoration: none;
+
+	/*Firefox*/
+	-moz-transition:all 1s ease;
+	/*WebKit*/
+	-webkit-transition:all 1s ease;
+	/*Opera*/
+	-o-transition:all 1s ease;
+	/*Standard*/
+	transition: all 1s ease;
+
+
+
+
+
 
 }
 #nextPhoto:hover{
 	opacity:.8;
+
+	opacity:1;
+
+
+	/* Firefox */
+
+	-moz-transform: scale(2)  translate(50px);
+
+	/* WebKit */
+
+	-webkit-transform: scale(1.2)  translate(50px);
+	/* Opera */
+
+	-o-transform: scale(2)  translate(50px);
+
+	/* Standard */
+
+	transform: scale(2)  translate(50px);
+
+
+
+	z-index: 1000;
+
 }
 
 .details p {
@@ -149,7 +197,7 @@ Make it animate nicely. You'll need CSS3 for this*/
 	height: 20px;
 	opacity: .8;
 	text-decoration: none;
-
+	transform:rotate(180deg);
 
 
 

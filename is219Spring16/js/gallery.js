@@ -45,7 +45,7 @@ $(document).ready(function() {
 
 
 //adding a click handler to the img.moreIndicator
-$("img.moreIndicator").click(function(){
+$(".moreIndicator").click(function(){
 	if($(".moreIndicator").hasClass("rot90")) {
 		console.log("Came back true");
 		$(".moreIndicator").addClass("rot270");
