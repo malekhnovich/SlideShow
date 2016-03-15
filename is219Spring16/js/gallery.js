@@ -33,12 +33,44 @@ function animate() {
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
 //div details fadeToggle
-
+var counter = 0;
+var counterBackward=12;
 $(document).ready(function() {
 	$("#nextPhoto").css("float", "right");
 
 });
 $(document).ready(function() {
+
+	$("#nextPhoto").on("click", function () {
+
+		document.getElementById("photo").src = mImages[counter]["imgPath"];
+		$("div.details").empty().append("<p>Description: " + mImages[counter]["description"] + "</p>" +
+			"<p>Location: " + mImages[counter]["imgLocation"] + "</p>" +
+			"<p>Date: " + mImages[counter]["date"] + "</p></details>").show();
+		counter++;
+		if (counter==13){
+			counter=0;
+		}
+
+
+
+
+	});
+
+	$("#prevPhoto.rot180").on("click",function () {
+		console.log("its been clicked");
+
+		document.getElementById("photo").src = mImages[counterBackward]["imgPath"];
+		$( "div.details" ).empty().append( "<p>Description: "+mImages[counterBackward]["description"]+"</p>"+
+			"<p>Location: "+mImages[counterBackward]["imgLocation"]+"</p>"+
+			"<p>Date: "+mImages[counterBackward]["date"]+"</p></details>").show();
+
+	counterBackward--;
+		if(counterBackward==0){
+			counterBackward=12;
+		}
+	});
+
 
 });
 
@@ -64,31 +96,29 @@ $(".moreIndicator").click(function(){
 
 
 
-
 function swapPhoto() {
-	for(mCurrentIndex=0;mCurrentIndex<mImages.length;mCurrentIndex++){
+	for( var mCurrentIndex=0;mCurrentIndex<mImages.length;mCurrentIndex++){
 		document.getElementById("photo").src=mImages[mCurrentIndex]["imgPath"];
 		$( "div.details" ).empty().append( "<p>Description: "+mImages[mCurrentIndex]["description"]+"</p>"+
 		"<p>Location: "+mImages[mCurrentIndex]["imgLocation"]+"</p>"+
 		"<p>Date: "+mImages[mCurrentIndex]["date"]+"</p></details>").show();
-		if(mCurrentIndex==galleryImage.images.length-1){
-			mCurrentIndex==0;
-		}
-		$("#prevPhoto").click(function () {
-			$document.getElementById("photo").src = mImages[mCurrentIndex]["imgPath"];
-		});
-		$("#nextPhoto").click(function () {
-
-			document.getElementById("photo").src = mImages[mCurrentIndex]["imgPath"];
-			//console.log(mImages);
-
-		});
+			mCurrentIndex++;
 
 
 
 
 
-	}
+
+
+
+
+
+}
+
+
+
+
+
 
 
 	//Add code here to access the #slideShow element.
@@ -100,7 +130,7 @@ function swapPhoto() {
 }
 
 // Counter for the mImages array
-var mCurrentIndex = 0;
+
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
 var mUrl = 'images.json';
@@ -108,13 +138,19 @@ var mUrl = 'images.json';
 var mRequest = new XMLHttpRequest();
 function mRequestListener(){
 	var mJson=this.responseText;
+
 	galleryImage=JSON.parse(mJson);
+	GalleryImage.location=galleryImage.images["imgLocation"];
+	GalleryImage.img=galleryImage.images["imgPath"];
+	GalleryImage.description=galleryImage.images["description"];
+	GalleryImage.date=galleryImage.images["date"];
+
 	for(mCurrentIndex=0;mCurrentIndex<galleryImage.images.length;mCurrentIndex++){
 		mImages.push(galleryImage.images[mCurrentIndex]);
 
 		//console.log(mImages[mCurrentIndex]);
 	}
-	console.log(galleryImage.images[0]["imgPath"]);
+	console.log(GalleryImage.date);
 
 }
 mRequest.addEventListener("load",mRequestListener);
@@ -154,7 +190,7 @@ window.addEventListener('load', function() {
 
 }, false);
 //PART 1
-var GalleryImage=function GalleryImage() {
+var GalleryImage=function GalleryImage(location,description,date,img) {
 	this.location=location;
 	this.description=description;
 	this.date=date;
