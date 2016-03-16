@@ -75,18 +75,23 @@ $(document).ready(function() {
 });
 
 
-
+$(document).ready(function(){
 //adding a click handler to the img.moreIndicator
-$(".moreIndicator").click(function(){
-	if($(".moreIndicator").hasClass("rot90")) {
-		console.log("Came back true");
-		$(".moreIndicator").addClass("rot270");
+$("img.moreIndicator.rot90").on("click",function() {
+	if($("img.moreIndicator.rot90").hasClass("rot90")) {
+		console.log("COOD"+$("img.moreIndicator.rot90").hasClass("rot90"));
+		$("img.moreIndicator").attr("img.moreIndicator.rot270");
+		$("img.moreIndicator.rot90").toggleClass("rot270");
+		$("div.details").fadeToggle();
 	}else{
-		$(".moreIndicator").removeClass("rot270");
+		$("img.moreIndicator").remove("img.moreIndicator.rot270");
 		console.log("Came back false");
-		$(".moreIndicator").addClass("rot90");
+		$("img.moreIndicator").attr("img.moreIndicator.rot90");
 	}
-	$(".moreIndicator.rot90").fadeToggle();
+
+});
+
+	
 });
 
 

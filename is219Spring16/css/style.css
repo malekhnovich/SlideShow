@@ -20,7 +20,7 @@ body {
 
 .photoHolder {
 	position: relative;
-	width: 80%;
+	width: 90%;
 	margin: 0 auto;
 }
 
@@ -147,6 +147,8 @@ Make it animate nicely. You'll need CSS3 for this*/
 	background:orange;
 	height:20px;
 	opacity: .3;
+	top:70%;
+	left:45%;
 	text-decoration: none;
 	transform: rotate(90deg);
 
@@ -246,11 +248,15 @@ Make it animate nicely. You'll need CSS3 for this*/
 	display:inline-block;
 	border:1px dashed orange ;
 	padding:10px;
-	background:blue;
+	background:black;
 	height:20px;
 	opacity: .3;
 	text-decoration: none;
-
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
 	/*Firefox*/
 	-moz-transition:all 1s ease;
 	/*WebKit*/
