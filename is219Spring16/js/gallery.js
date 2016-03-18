@@ -100,14 +100,17 @@ $("img.moreIndicator.rot90").on("click",function() {
 
 
 
-
+var mCurrentIndex=0;
 function swapPhoto() {
-	for( var mCurrentIndex=0;mCurrentIndex<mImages.length;mCurrentIndex++){
+console.log("The mCurrentIndex equals "+mCurrentIndex);
+
 		document.getElementById("photo").src=mImages[mCurrentIndex]["imgPath"];
 		$( "div.details" ).empty().append( "<p>Description: "+mImages[mCurrentIndex]["description"]+"</p>"+
 		"<p>Location: "+mImages[mCurrentIndex]["imgLocation"]+"</p>"+
 		"<p>Date: "+mImages[mCurrentIndex]["date"]+"</p></details>").show();
-			mCurrentIndex++;
+
+
+		console.log("The current index is "+mCurrentIndex);
 
 
 
@@ -117,8 +120,6 @@ function swapPhoto() {
 
 
 
-
-}
 
 
 
@@ -130,8 +131,14 @@ function swapPhoto() {
 	//Access the img element and replace its source
 	//with a new image from your images array which is loaded 
 	//from the JSON string
-	//console.log(mImages[mCurrentIndex]);
+
+
 	console.log('swap photo');
+	mCurrentIndex++;
+	if(mCurrentIndex==13){
+		mCurrentIndex=0;
+	}
+ console.log("The current index is "+mCurrentIndex);
 }
 
 // Counter for the mImages array
@@ -150,8 +157,8 @@ function mRequestListener(){
 	GalleryImage.description=galleryImage.images["description"];
 	GalleryImage.date=galleryImage.images["date"];
 
-	for(mCurrentIndex=0;mCurrentIndex<galleryImage.images.length;mCurrentIndex++){
-		mImages.push(galleryImage.images[mCurrentIndex]);
+	for(var index=0;index<galleryImage.images.length;index++){
+		mImages.push(galleryImage.images[index]);
 
 		//console.log(mImages[mCurrentIndex]);
 	}

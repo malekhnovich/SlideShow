@@ -248,7 +248,7 @@ Make it animate nicely. You'll need CSS3 for this*/
 	display:inline-block;
 	border:1px dashed orange ;
 	padding:10px;
-	background:black;
+	background:blue;
 	height:20px;
 	opacity: .3;
 	text-decoration: none;
