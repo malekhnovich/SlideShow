@@ -30,7 +30,7 @@ body {
 	position: absolute;
 
 	z-index: 3;
-	opacity: .8;
+
 	top: 0px;
 
 
@@ -68,7 +68,7 @@ body {
 	position:relative;
 	height: 42px;
 	width: 42px;
-	opacity:.8;
+
 
 }
 #prevPhoto:hover{
@@ -80,7 +80,6 @@ body {
 	display: inline-block;
 	height: 42px;
 	width:42px;
-	opacity: .8;
 	text-decoration: none;
 
 	/*Firefox*/
@@ -101,7 +100,7 @@ body {
 #nextPhoto:hover{
 	opacity:.8;
 
-	opacity:1;
+	
 
 
 	/* Firefox */
