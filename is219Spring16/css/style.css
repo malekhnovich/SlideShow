@@ -65,9 +65,10 @@ body {
 }
 
 #prevPhoto {
+	position:relative;
 	height: 42px;
 	width: 42px;
-
+	opacity:.8;
 
 }
 #prevPhoto:hover{
@@ -77,10 +78,8 @@ body {
 #nextPhoto {
 	position: relative;
 	display: inline-block;
-	border: 1px dashed blue;
-	padding: 10px;
-	background: black;
-	height: 20px;
+	height: 42px;
+	width:42px;
 	opacity: .8;
 	text-decoration: none;
 
@@ -141,13 +140,11 @@ body {
 Make it animate nicely. You'll need CSS3 for this*/
 .rot90 {
 	position:relative;
-	display:inline-block;
-	border:1px dashed blue;
-	padding:10px;
-	background:orange;
+	display:inline;
+	padding:0px;
 	height:20px;
 	opacity: .3;
-	top:70%;
+	top:40%;
 	left:45%;
 	text-decoration: none;
 
@@ -179,11 +176,11 @@ Make it animate nicely. You'll need CSS3 for this*/
 	-webkit-transform: scale(1.2) rotate(90deg) translate(50px);
 		/* Opera */
 
-	-o-transform: scale(2) rotate(90deg) translate(50px);
+	-o-transform: scale(1.2) rotate(90deg) translate(50px);
 
 		/* Standard */
 
-	transform: scale(2) rotate(90deg) translate(50px);
+	transform: scale(1.2) rotate(90deg) translate(50px);
 
 
 
@@ -197,10 +194,8 @@ Make it animate nicely. You'll need CSS3 for this*/
 .rot180 {
 	position: relative;
 	display: inline-block;
-	border: 1px dashed blue;
-	padding: 10px;
-	background: black;
-	height: 20px;
+	border: 1px dashed red;
+	height: 40px;
 	opacity: .8;
 	text-decoration: none;
 	transform:rotate(180deg);
@@ -249,20 +244,14 @@ Make it animate nicely. You'll need CSS3 for this*/
 Make it animate nicely. You'll need CSS3 for this*/
 .rot270 {
 	position:relative;
-	display:inline-block;
-	border:1px dashed blue;
-	padding:10px;
-	background:red;
+	display:inline;
+	border:1px dashed green;
 	height:20px;
 	opacity: .3;
-	top:70%;
+	top:40%;
 	left:45%;
 	text-decoration: none;
-	-webkit-transform: rotate(270deg);
-	-moz-transform: rotate(270deg);
-	-ms-transform: rotate(270deg);
-	-o-transform: rotate(270deg);
-	transform: rotate(270deg);
+
 
 
 	/*Firefox*/
@@ -273,7 +262,8 @@ Make it animate nicely. You'll need CSS3 for this*/
 	-o-transition:all 1s ease;
 	/*Standard*/
 	transition: all 1s ease;
-
+-moz-transform:rotate(270deg);
+-webkit-transform:rotate(270deg);
 
 }
 .rot270:hover{
