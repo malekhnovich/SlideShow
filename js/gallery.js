@@ -39,7 +39,7 @@ function animate() {
 
 //div details fadeToggle
 var counter = 0;
-var counterBackward=12;
+var counterBackward=mImages.length-1;
 $(document).ready(function() {
 	$("#nextPhoto").css("float", "right");
 
@@ -53,7 +53,7 @@ $(document).ready(function() {
 			"<p>Location: " + mImages[counter]["imgLocation"] + "</p>" +
 			"<p>Date: " + mImages[counter]["date"] + "</p></details>").show();
 		counter++;
-		if (counter==13){
+		if (counter==mImages.length){
 			counter=0;
 		}
 
@@ -140,7 +140,7 @@ console.log("The mCurrentIndex equals "+mCurrentIndex);
 
 	console.log('swap photo');
 	mCurrentIndex++;
-	if(mCurrentIndex==13){
+	if(mCurrentIndex==mImages.length){
 		mCurrentIndex=0;
 	}
  console.log("The current index is "+mCurrentIndex);
