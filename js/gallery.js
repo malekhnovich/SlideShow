@@ -214,17 +214,6 @@ console.log("response from the server:"+data);
 	mRequest.send();
 });
 */
-var theUrl="index.html?json=images-short.json";
-var alternateUrl="index.html?json=extra.json"
-function getAlternate(theUrl){
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-	xmlHttp.send( );
-	mjson="images-short.json";
-
-	return mjson.responseTextIt ;
-
-}
 
 //mRequest.open("GET",mjson);
 //mRequest.send();
