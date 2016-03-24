@@ -31,6 +31,11 @@ function animate() {
 }
 
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
+//Code to get alternate JSON
+
+
+
+
 
 //div details fadeToggle
 var counter = 0;
@@ -146,7 +151,15 @@ console.log("The mCurrentIndex equals "+mCurrentIndex);
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
 var mUrl = 'images.json';
+var mUrl2='images-short.json';
+var mUrlExtra='extra.json';
 // XMLHttpRequest variable
+
+
+
+
+
+
 var mRequest = new XMLHttpRequest();
 function mRequestListener(){
 	var mJson=this.responseText;
@@ -166,8 +179,65 @@ function mRequestListener(){
 
 }
 mRequest.addEventListener("load",mRequestListener);
-mRequest.open("GET",mUrl);
-mRequest.send();
+var mjson="images.json";
+var json;
+if ($(location).attr('href').contains("index.html?json=images-short.json")){
+	mjson = "images-short.json";
+	mRequest.open("GET", mjson);
+	mRequest.send();
+}else if ($(location).attr('href').contains("index.html?json=extra.json")){
+	mjson="extra.json";
+	mRequest.open("GET",mjson);
+	mRequest.send();
+
+}else{
+	mjson="images.json";
+	mRequest.open("GET",mjson);
+	mRequest.send();
+}
+/*
+
+
+$.get("index.html",json,function(data,textstatus){
+console.log("response from the server:"+data);
+	if(json=="extra.json") {
+		mjson = "extra.json";
+	}else if(json=="images-short.json"){
+		mjson="images-short.json";
+	}else {
+	mjson="images.json";
+	}
+
+
+
+	mRequest.open("GET",mjson);
+	mRequest.send();
+});
+*/
+var theUrl="index.html?json=images-short.json";
+var alternateUrl="index.html?json=extra.json"
+function getAlternate(theUrl){
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+	xmlHttp.send( );
+	mjson="images-short.json";
+
+	return mjson.responseTextIt ;
+
+}
+
+//mRequest.open("GET",mjson);
+//mRequest.send();
+
+
+
+
+//mRequest.open("GET",mjson);
+//mRequest.send();
+
+
+//mRequest.open("GET",mUrlExtra);
+
 
 //GalleryImage=JSON.parse(mUrl);
 //GalleryImage=JSON.parse(mRequest.responseText);
@@ -175,7 +245,7 @@ mRequest.send();
 var mImages = [];
 
 // Holds the retrived JSON information
-var mJson;
+
 
 
 

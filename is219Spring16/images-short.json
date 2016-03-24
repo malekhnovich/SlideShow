@@ -23,6 +23,12 @@
       "imgLocation": "Fourth image (index 3)",
       "description": "This is the 4th image in the set",
       "date": "04/01/2016"
-    }
+    },
+        {
+            "imgPath": "http://placehold.it/518x389?text=index+4",
+            "imgLocation": "Fifth image (index 4)",
+            "description": "This is the 5th image in the set",
+            "date": "04/01/2016"
+        }
   ]
 }
