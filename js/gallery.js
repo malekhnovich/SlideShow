@@ -1,15 +1,15 @@
 // requestAnim shim layer by Paul Irish
-    window.requestAnimFrame = (function(){
-      return  window.requestAnimationFrame       || 
-              window.webkitRequestAnimationFrame || 
-              window.mozRequestAnimationFrame    || 
-              window.oRequestAnimationFrame      || 
-              window.msRequestAnimationFrame     || 
-              function(/* function */ callback, /* DOMElement */ element){
-                window.setTimeout(callback, 1000 / 60);
-              };
-    })();
-  
+window.requestAnimFrame = (function(){
+	return  window.requestAnimationFrame       ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame    ||
+		window.oRequestAnimationFrame      ||
+		window.msRequestAnimationFrame     ||
+		function(/* function */ callback, /* DOMElement */ element){
+			window.setTimeout(callback, 1000 / 60);
+		};
+})();
+
 
 // example code from mr doob : http://mrdoob.com/lab/javascript/requestanimationframe/
 
@@ -18,7 +18,7 @@ animate();
 var mLastFrameTime = 0;
 var mWaitTime = 5000; //time in ms
 function animate() {
-    requestAnimFrame( animate );
+	requestAnimFrame( animate );
 	var currentTime = new Date().getTime();
 	if (mLastFrameTime === 0) {
 		mLastFrameTime = currentTime;
@@ -39,7 +39,7 @@ function animate() {
 
 //div details fadeToggle
 var counter = 0;
-var counterBackward=mImages.length-1;
+var counterBackward=12;
 $(document).ready(function() {
 	$("#nextPhoto").css("float", "right");
 
@@ -53,7 +53,7 @@ $(document).ready(function() {
 			"<p>Location: " + mImages[counter]["imgLocation"] + "</p>" +
 			"<p>Date: " + mImages[counter]["date"] + "</p></details>").show();
 		counter++;
-		if (counter==mImages.length){
+		if (counter==13){
 			counter=0;
 		}
 
@@ -70,7 +70,7 @@ $(document).ready(function() {
 			"<p>Location: "+mImages[counterBackward]["imgLocation"]+"</p>"+
 			"<p>Date: "+mImages[counterBackward]["date"]+"</p></details>").show();
 
-	counterBackward--;
+		counterBackward--;
 		if(counterBackward==0){
 			counterBackward=12;
 		}
@@ -82,21 +82,21 @@ $(document).ready(function() {
 
 $(document).ready(function(){
 //adding a click handler to the img.moreIndicator
-$("img.moreIndicator.rot90").on("click",function() {
-	if($("img.moreIndicator.rot90").hasClass("rot90")) {
-		console.log("COOD"+$("img.moreIndicator.rot90").hasClass("rot90"));
-		$("img.moreIndicator").attr("img.moreIndicator.rot270");
-		$("img.moreIndicator.rot90").toggleClass("rot270");
-		$("div.details").fadeToggle();
-	}else{
-		$("img.moreIndicator").remove("img.moreIndicator.rot270");
-		console.log("Came back false");
-		$("img.moreIndicator").attr("img.moreIndicator.rot90");
-	}
+	$("img.moreIndicator.rot90").on("click",function() {
+		if($("img.moreIndicator.rot90").hasClass("rot90")) {
+			console.log("COOD"+$("img.moreIndicator.rot90").hasClass("rot90"));
+			$("img.moreIndicator").attr("img.moreIndicator.rot270");
+			$("img.moreIndicator.rot90").toggleClass("rot270");
+			$("div.details").fadeToggle();
+		}else{
+			$("img.moreIndicator").remove("img.moreIndicator.rot270");
+			console.log("Came back false");
+			$("img.moreIndicator").attr("img.moreIndicator.rot90");
+		}
 
-});
+	});
 
-	
+
 });
 
 
@@ -107,15 +107,15 @@ $("img.moreIndicator.rot90").on("click",function() {
 
 var mCurrentIndex=0;
 function swapPhoto() {
-console.log("The mCurrentIndex equals "+mCurrentIndex);
+	console.log("The mCurrentIndex equals "+mCurrentIndex);
 
-		document.getElementById("photo").src=mImages[mCurrentIndex]["imgPath"];
-		$( "div.details" ).empty().append( "<p>Description: "+mImages[mCurrentIndex]["description"]+"</p>"+
+	document.getElementById("photo").src=mImages[mCurrentIndex]["imgPath"];
+	$( "div.details" ).empty().append( "<p>Description: "+mImages[mCurrentIndex]["description"]+"</p>"+
 		"<p>Location: "+mImages[mCurrentIndex]["imgLocation"]+"</p>"+
 		"<p>Date: "+mImages[mCurrentIndex]["date"]+"</p></details>").show();
 
 
-		console.log("The current index is "+mCurrentIndex);
+	console.log("The current index is "+mCurrentIndex);
 
 
 
@@ -134,16 +134,16 @@ console.log("The mCurrentIndex equals "+mCurrentIndex);
 
 	//Add code here to access the #slideShow element.
 	//Access the img element and replace its source
-	//with a new image from your images array which is loaded 
+	//with a new image from your images array which is loaded
 	//from the JSON string
 
 
 	console.log('swap photo');
 	mCurrentIndex++;
-	if(mCurrentIndex==mImages.length){
+	if(mCurrentIndex==13){
 		mCurrentIndex=0;
 	}
- console.log("The current index is "+mCurrentIndex);
+	console.log("The current index is "+mCurrentIndex);
 }
 
 // Counter for the mImages array
@@ -180,40 +180,39 @@ function mRequestListener(){
 }
 mRequest.addEventListener("load",mRequestListener);
 var mjson="images.json";
-var json;
-if ($(location).attr('href').contains("index.html?json=images-short.json")){
+
+if ($(location).attr('href,https://is219s16alekhnovich-p2.herokuapp.com/index.html?json=extra.json')){
 	mjson = "images-short.json";
-	mRequest.open("GET", mjson);
-	mRequest.send();
-}else if ($(location).attr('href').contains("index.html?json=extra.json")){
+
+}else if ($(location).attr('href,https://is219s16alekhnovich-p2.herokuapp.com/index.html?json=extra.json')){
 	mjson="extra.json";
-	mRequest.open("GET",mjson);
-	mRequest.send();
+
 
 }else{
 	mjson="images.json";
-	mRequest.open("GET",mjson);
-	mRequest.send();
+
 }
+mRequest.open("GET", mjson);
+mRequest.send();
 /*
 
 
-$.get("index.html",json,function(data,textstatus){
-console.log("response from the server:"+data);
-	if(json=="extra.json") {
-		mjson = "extra.json";
-	}else if(json=="images-short.json"){
-		mjson="images-short.json";
-	}else {
-	mjson="images.json";
-	}
+ $.get("index.html",json,function(data,textstatus){
+ console.log("response from the server:"+data);
+ if(json=="extra.json") {
+ mjson = "extra.json";
+ }else if(json=="images-short.json"){
+ mjson="images-short.json";
+ }else {
+ mjson="images.json";
+ }
 
 
 
-	mRequest.open("GET",mjson);
-	mRequest.send();
-});
-*/
+ mRequest.open("GET",mjson);
+ mRequest.send();
+ });
+ */
 
 //mRequest.open("GET",mjson);
 //mRequest.send();
@@ -249,14 +248,14 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 }
 
 $(document).ready( function() {
-	
+
 	// This initially hides the photos' metadata information
 	$('.details').eq(0).hide();
-	
+
 });
 
 window.addEventListener('load', function() {
-	
+
 	console.log('window loaded');
 
 }, false);
