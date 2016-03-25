@@ -181,17 +181,6 @@ function mRequestListener(){
 mRequest.addEventListener("load",mRequestListener);
 var mjson="images.json";
 
-if ($(location).attr('href,https://is219s16alekhnovich-p2.herokuapp.com/index.html?json=extra.json')){
-	mjson = "images-short.json";
-
-}else if ($(location).attr('href,https://is219s16alekhnovich-p2.herokuapp.com/index.html?json=extra.json')){
-	mjson="extra.json";
-
-
-}else{
-	mjson="images.json";
-
-}
 mRequest.open("GET", mjson);
 mRequest.send();
 /*
