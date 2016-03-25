@@ -29,6 +29,12 @@
       "imgLocation": "Cop Car",
       "description": "Tuxedo",
       "date": "03/05/2016"
+    },
+    {
+      "imgPath": "https://upload.wikimedia.org/wikipedia/commons/4/44/Ferrari599_A6_1.JPG",
+      "imgLocation": "Ferari",
+      "description": "Red",
+      "date": "03/06/2016"
     }
   ]
 }

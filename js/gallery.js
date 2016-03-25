@@ -179,10 +179,50 @@ function mRequestListener(){
 
 }
 mRequest.addEventListener("load",mRequestListener);
-var mjson="images.json";
+var mjson;
+function getQueryParams(json) {
+	json = json.split("+").join(" ");
+	var params = {},
+		tokens,
+		re = /[?&]?([^=]+)=([^&]*)/g;
+	while (tokens = re.exec(json)) {
+		params[decodeURIComponent(tokens[1])]
+			= decodeURIComponent(tokens[2]);
+	}
+	return params;
+}
+var $_GET = getQueryParams(document.location.search);
+console.log($_GET);
+console.log($_GET["json"]);
 
-mRequest.open("GET", mjson);
-mRequest.send();
+
+if($_GET["json"]=="extra.json"){
+	mjson="extra.json";
+	console.log("hello1");
+	mRequest.open("GET",mjson);
+	mRequest.send();
+}else if($_GET["json"]=="images-short.json"){
+	mjson="images-short.json";
+	console.log("hello2");
+	mRequest.open("GET",mjson);
+	mRequest.send();
+}else{
+	mjson="images.json";
+	console.log("hello3");
+	mRequest.open("GET",mjson);
+	mRequest.send();
+}
+
+console.log("mjson equals:"+mjson);
+
+
+
+
+
+
+
+
+
 /*
 
 
