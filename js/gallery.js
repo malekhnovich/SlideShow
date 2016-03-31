@@ -40,6 +40,7 @@ function animate() {
 //div details fadeToggle
 var counter = 0;
 var counterBackward=12;
+
 $(document).ready(function() {
 	$("#nextPhoto").css("float", "right");
 
@@ -53,31 +54,30 @@ $(document).ready(function() {
 			"<p>Location: " + mImages[counter]["imgLocation"] + "</p>" +
 			"<p>Date: " + mImages[counter]["date"] + "</p></details>").show();
 		counter++;
-		if (counter==13){
-			counter=0;
+		if (counter >= 13) {
+			counter = 0;
 		}
 
 
-
-
 	});
-
-	$("#prevPhoto.rot180").on("click",function () {
+});
+$(document).ready(function() {
+	$("#prevPhoto").on("click", function () {
 		console.log("its been clicked");
-
+		console.log("Counter backward equals: " + counterBackward);
 		document.getElementById("photo").src = mImages[counterBackward]["imgPath"];
-		$( "div.details" ).empty().append( "<p>Description: "+mImages[counterBackward]["description"]+"</p>"+
-			"<p>Location: "+mImages[counterBackward]["imgLocation"]+"</p>"+
-			"<p>Date: "+mImages[counterBackward]["date"]+"</p></details>").show();
+		$("div.details").empty().append("<p>Description: " + mImages[counterBackward]["description"] + "</p>" +
+			"<p>Location: " + mImages[counterBackward]["imgLocation"] + "</p>" +
+			"<p>Date: " + mImages[counterBackward]["date"] + "</p></details>").show();
 
 		counterBackward--;
-		if(counterBackward==0){
-			counterBackward=12;
+		if (counterBackward <= 0) {
+			counterBackward = 12;
 		}
 	});
-
-
 });
+
+
 
 
 $(document).ready(function(){
@@ -211,6 +211,7 @@ if($_GET["json"]=="extra.json"){
 	console.log("hello3");
 	mRequest.open("GET",mjson);
 	mRequest.send();
+
 }
 
 console.log("mjson equals:"+mjson);

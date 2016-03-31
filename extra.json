@@ -2,73 +2,73 @@
   "images": [
     {
       "imgPath": "http://www.maserati.com/mediaObject/redesign/new-model-menu/resized-80-new/GranCabrio-MC0/resolutions/res-l427x1000/GranCabrio-MC0.jpg",
-      "imgLocation": "GranCabrio",
+      "imgLocation": "Dealership",
       "description": "White Convertible",
       "date": "03/01/2016"
     },
     {
       "imgPath": "http://www.maserati.com/mediaObject/redesign/new-model-menu/resized%2080/QP_GTS/resolutions/res-l427x1000/QP_GTS.jpg",
-      "imgLocation": "QPGTS",
+      "imgLocation": "Dealership",
       "description": "Black Sedan",
       "date": "03/02/2016"
     },
     {
       "imgPath": "http://i.telegraph.co.uk/multimedia/archive/02040/maseratinew_2040275c.jpg",
-      "imgLocation": "Q4",
+      "imgLocation": "Portland",
       "description": "Blue",
       "date": "03/03/2016"
     },
     {
       "imgPath": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTjc-HZA79Tp4oL9IPNOPJNjQcTSPsLnQtxw_ITA3MAgij0Q1bheA",
-      "imgLocation": "Ghibli S Q4",
+      "imgLocation": "Denver",
       "description": "Navy Sedan",
       "date": "03/04/2016"
     },
     {
       "imgPath": "http://static.independent.co.uk/s3fs-public/thumbnails/image/2014/08/13/12/Decepticon-Maserati.jpg",
-      "imgLocation": "Cop Car",
+      "imgLocation": "Italy",
       "description": "Tuxedo",
       "date": "03/05/2016"
     },
     {
       "imgPath": "https://upload.wikimedia.org/wikipedia/commons/4/44/Ferrari599_A6_1.JPG",
-      "imgLocation": "Ferari",
+      "imgLocation": "I-80",
       "description": "Red",
       "date": "03/06/2016"
     },
     {
       "imgPath": "http://st.automobilemag.com/uploads/sites/11/2014/06/2015-Ferrari-California-T-side-view-blue-top-up.jpg",
-      "imgLocation": "Ferari",
+      "imgLocation": "Sacremento",
       "description": "Blue",
       "date": "03/06/2016"
     },
     {
       "imgPath": "http://o.aolcdn.com/dims-global/dims3/GLOB/legacy_thumbnail/750x422/quality/95/http://www.blogcdn.com/slideshows/images/slides/366/140/4/S3661404/slug/l/ferrari-f12tdf-5low-1.jpg",
-      "imgLocation": "Ferari",
+      "imgLocation": "Delaware",
       "description": "Yellow",
       "date": "03/06/2016"
     },
     {
       "imgPath": "http://24autoworld.com/wp-content/uploads/2015/02/wpid-Ferrari-458-Blue-And-White-video-5.jpg",
-      "imgLocation": "Ferari",
+      "imgLocation": "Venice",
       "description": "Coral Blue",
       "date": "03/06/2016"
     },
     {
       "imgPath": "http://i.dailymail.co.uk/i/pix/2013/09/23/article-2430224-1835F01700000578-191_634x438.jpg",
-      "imgLocation": "Ferari",
+      "imgLocation": "Beverly Hills",
       "description": "Pearl White",
       "date": "03/06/2016"
     },
     {
       "imgPath": "https://i.ytimg.com/vi/JMvfX7q2LCM/maxresdefault.jpg",
-      "imgLocation": "Ferari",
-      "description": "Fores Green",
+      "imgLocation": "Texas",
+      "description": "Forest Green",
       "date": "03/06/2016"
     },
     {
       "imgPath": "https://madwhips.s3.amazonaws.com/photo_2346_orange_and_black_ferrari_458_1_105957_fh.jpg",
-      "imgLocation": "Ferari",
+      "imgLocation": "California",
       "description": "Orange",
       "date": "03/06/2016"
     }

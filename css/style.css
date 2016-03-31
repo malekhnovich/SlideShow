@@ -105,22 +105,6 @@ body {
 
 	/* Firefox */
 
-	-moz-transform: scale(2)  translate(50px);
-
-	/* WebKit */
-
-	-webkit-transform: scale(1.2)  translate(50px);
-	/* Opera */
-
-	-o-transform: scale(2)  translate(50px);
-
-	/* Standard */
-
-	transform: scale(2)  translate(50px);
-
-
-
-	z-index: 1000;
 
 }
 
@@ -193,9 +177,7 @@ Make it animate nicely. You'll need CSS3 for this*/
 .rot180 {
 	position: relative;
 	display: inline-block;
-	border: 1px dashed red;
 	height: 40px;
-	opacity: .8;
 	text-decoration: none;
 	transform:rotate(180deg);
 
@@ -216,27 +198,12 @@ Make it animate nicely. You'll need CSS3 for this*/
 }
 
 .rot180:hover{
-	opacity:1;
+	opacity:.8;
 
 
 	/* Firefox */
 
-	-moz-transform: scale(2) rotate(180deg) translate(50px);
 
-	/* WebKit */
-
-	-webkit-transform: scale(1.2) rotate(180deg) translate(50px);
-	/* Opera */
-
-	-o-transform: scale(2) rotate(180deg) translate(50px);
-
-	/* Standard */
-
-	transform: scale(2) rotate(180deg) translate(50px);
-
-
-
-	z-index: 1000;
 }
 
 /*Add CSS styles to rotate the element 270deg
@@ -244,7 +211,6 @@ Make it animate nicely. You'll need CSS3 for this*/
 .rot270 {
 	position:relative;
 	display:inline;
-	border:1px dashed green;
 	height:20px;
 	opacity: .3;
 	top:40%;
